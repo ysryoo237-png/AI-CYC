@@ -335,6 +335,32 @@ export default function App() {
       {/* Chat Area */}
       <div style={{ flex: 1, overflowY: "auto", padding: "20px", maxWidth: "800px", width: "100%", margin: "0 auto" }}>
         
+        {messages.length > 0 && (
+          <div style={{ textAlign: "center", marginBottom: "16px" }}>
+            <button
+              onClick={() => setMessages([])}
+              style={{
+                background: "rgba(240,180,41,0.15)",
+                border: "1px solid rgba(240,180,41,0.4)",
+                borderRadius: "20px",
+                padding: "8px 20px",
+                color: "#f0b429",
+                fontSize: "13px",
+                cursor: "pointer",
+                transition: "all 0.2s",
+              }}
+              onMouseEnter={e => {
+                e.target.style.background = "rgba(240,180,41,0.3)";
+              }}
+              onMouseLeave={e => {
+                e.target.style.background = "rgba(240,180,41,0.15)";
+              }}
+            >
+              🏠 처음으로 돌아가기
+            </button>
+          </div>
+        )}
+
         {messages.length === 0 && (
           <div>
             <div style={{
